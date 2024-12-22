@@ -1,12 +1,4 @@
-			/*!
-			 * EasePack 3.0.0
-			 * https://greensock.com
-			 *
-			 * @license Copyright 2008-2019, GreenSock. All rights reserved.
-			 * Subject to the terms at https://greensock.com/standard-license or for
-			 * Club GreenSock members, the agreement issued with that membership.
-			 * @author: Jack Doyle, jack@greensock.com
-			 */
+
 			! function(e, n) {
 				"object" == typeof exports && "undefined" != typeof module ? n(exports) : "function" == typeof define && define
 					.amd ? define(["exports"], n) : n((e = e || self).window = e.window || {})

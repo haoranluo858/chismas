@@ -23,12 +23,12 @@
 		<!-- <script
 			src="https://chismas.pages.dev/js/ChristmasScene.js">
 		</script> -->
-		<!-- <script
+		<script
 			src="https://chismas.pages.dev/js/MorphSVGPlugin.js">
 		</script>
 		<script
 			src="https://chismas.pages.dev/js/DrawSVGPlugin.js">
-		</script> -->
+		</script>
 		<script
 			src="https://chismas.pages.dev/js/MotionPathPlugin.js">
 		</script>
@@ -190,7 +190,7 @@
 		<script
 			src="https://chismas.pages.dev/js/EasePack.js">
 		</script>
-		<!-- <script src="C:\Users\dongf\Desktop\tree\CTGoodLines\js\one.js"></script> -->
+
 		<!-- 第二部分的国外CDN资源 -->
 		<!-- 国外CDN资源 -->
 		<script src="https://cdn.jsdelivr.net/npm/three@0.115.0/build/three.min.js"></script>
@@ -221,14 +221,14 @@
 				</ul>
 			</div>
 
-			<!-- <canvas id="overlay-bg"></canvas> -->
+			<canvas id="overlay-bg"></canvas>
 
 			<!-- 其他内容 -->
-			<!-- <script src="https://chismas.pages.dev/js/overlay-bg.js"></script> -->
+			<script src="https://chismas.pages.dev/js/overlay-bg.js"></script>
 			<!-- 其他脚本 -->
 		</div>
 		<video id="video-player"
-			style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; transition: all 5s ease;">
+			style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 15; transition: all 5s ease;">
 			<source src="https://chismas.pages.dev/video/chrismas.mp4" type="video/mp4">
 			<!-- <source src="C:\Users\dongf\Desktop\chamsis\video\chrismas.mp4" type="video/mp4"> -->
 			您的浏览器不支持HTML5视频。
@@ -835,7 +835,7 @@
 				var flake = document.createElement("div");
 				// 雪花字符 ❄❉❅❆✻✼❇❈❊✥✺
 				flake.innerHTML = "❆";
-				flake.style.cssText = "position: fixed; color: #fff; z-index: 10; pointer-events: none;";
+				flake.style.cssText = "position: fixed; color: #fff; z-index: 20; pointer-events: none;";
 				//获取页面的高度 相当于雪花下落结束时Y轴的位置
 				var documentHieght = window.innerHeight;
 				//获取页面的宽度，利用这个数来算出，雪花开始时left的值
