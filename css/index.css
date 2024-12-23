@@ -5,7 +5,16 @@
   font-family: 'STXingkai';
   src: url('https://chismas.pages.dev/font/STXINGKA.TTF') format('truetype');
 }
-
+@media (min-width: 768px) {
+  #christmas-title {
+    font-size: 5vw; /* 在较大的屏幕上使用较小的比例 */
+  }
+}
+ @media (min-width: 1200px) {
+  #christmas-title {
+    font-size: 72px; /* 在非常大的屏幕上使用固定大小 */
+  }
+}
 * {
   /* 常规初始化 */
   margin: 0;
@@ -72,7 +81,7 @@ body {
 }
 
 #christmas-title {
-  font-size: 72px; /* 设置字体大小 */
+  font-size: 5vw; /* 默认使用视口宽度的百分比 */
   font-family: 'STXingkai', 'KaiTi', '楷体', 'Kaiti SC', 'Kaiti TC', sans-serif;/* 设置字体为行楷 */
   color: rgb(255, 208, 143); /* 设置字体颜色 */
   font-weight: bold; /* 设置字体粗细 */
