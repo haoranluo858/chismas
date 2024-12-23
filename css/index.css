@@ -68,7 +68,7 @@ body {
 
 #christmas-title {
   font-size: 72px; /* 设置字体大小 */
-  font-family: 'STXingkai', 'KaiTi', '楷体', 'Kaiti SC', 'Kaiti TC', sans-serif; /* 设置字体为行楷 */
+  font-family: 'ZCOOL QingKe HuangYou', 'STXingkai', 'KaiTi', '楷体', 'Kaiti SC', 'Kaiti TC', sans-serif; /* 设置字体为行楷 */
   color: rgb(255, 208, 143); /* 设置字体颜色 */
   font-weight: bold; /* 设置字体粗细 */
   text-align: center; /* 设置文本居中 */
@@ -88,7 +88,8 @@ body {
   color: rgba(255, 209, 143, 0.6);
   padding: 16px;
   font-size: 26px;
-  font-family: 'STXingkai', 'KaiTi', '楷体', 'Kaiti SC', 'Kaiti TC', sans-serif; /* 设置字体为行楷 */
+  font-family: 'ZCOOL QingKe HuangYou', 'STXingkai', 'KaiTi', '楷体', 'Kaiti SC', 'Kaiti TC', sans-serif;
+   /* 设置字体为行楷 */
   outline: none;
   pointer-events: auto;
   cursor: pointer;
@@ -159,7 +160,7 @@ body {
 
 #header {
   font-size: 26px; /* 设置字体大小为 20 号 */
-  font-family: 'STXingkai', 'KaiTi', '楷体', 'Kaiti SC', 'Kaiti TC', sans-serif; /* 设置字体为行楷 */
+  font-family: 'ZCOOL QingKe HuangYou', 'STXingkai', 'KaiTi', '楷体', 'Kaiti SC', 'Kaiti TC', sans-serif; /* 设置字体为行楷 */
   color: #f2f4c0; /* 保持原有的字体颜色 */
   text-align: center; /* 保持文本居中 */
   position: absolute; /* 保持绝对定位 */
