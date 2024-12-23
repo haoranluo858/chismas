@@ -19,8 +19,8 @@ body {
 
   height: 100vh;
   /* 渐变背景色 */
-  background: radial-gradient(at top, #12313b, #000822);
-  /* background: transparent;  */
+  /* background: radial-gradient(at top, #12313b, #000822); */
+  background: black; 
 }
 
 #overlay-bg {
