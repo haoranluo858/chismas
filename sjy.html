@@ -260,43 +260,46 @@
 			}
 
 			function loadAudio(i) {
-				document.getElementById("overlay").innerHTML =
-					'<div class="text-loading">别着急，正在打开...</div>';
-				const file = musicList[i].url;
-				const loader = new THREE.AudioLoader();
-				loader.load(file, function(buffer) {
-					audio.setBuffer(buffer);
-					audio.setLoop(true);
-					audio.play();
-					analyser = new THREE.AudioAnalyser(audio, fftSize);
-					// 播放视频
-					const videoPlayer = document.getElementById("video-player");
-					videoPlayer.style.display = "block";
-					videoPlayer.controls = false; // 禁用控件
-					videoPlayer.play();
-					// 禁用用户交互
-					videoPlayer.addEventListener('click', (event) => {
-						event.preventDefault();
-					});
-					// 监听视频结束事件
-					videoPlayer.onended = function() {
-						// 缩小视频并移动到界面中间正上方
-						videoPlayer.style.width = "20%";
-						videoPlayer.style.height = "25%";
-						videoPlayer.style.top = "0"; // 取消顶部对齐
-						videoPlayer.style.left = "40%"; // 居中
-						setTimeout(() => {
-							console.log("Showing labels and adding tree after 10 seconds.");
-							showLabels();
-						}, 5000);
-						range(10).map((i) => {
-							addTree(scene, uniforms, totalPoints, [20, 0, -20 * i]);
-							addTree(scene, uniforms, totalPoints, [-20, 0, -20 * i]);
-						});
-					};
-					init();
-				});
-			}
+        document.getElementById("overlay").innerHTML =
+            '<div class="text-loading">别着急，正在打开...</div>';
+        const file = musicList[i].url;
+        const loader = new THREE.AudioLoader();
+        loader.load(file, function(buffer) {
+            audio.setBuffer(buffer);
+            audio.setLoop(true);
+            audio.play();
+            analyser = new THREE.AudioAnalyser(audio, fftSize);
+            // 播放视频
+            const videoPlayer = document.getElementById("video-player");
+            videoPlayer.style.display = "block";
+            videoPlayer.controls = false; // 禁用控件
+            videoPlayer.play();
+            // 禁用用户交互
+            videoPlayer.addEventListener('click', (event) => {
+                event.preventDefault();
+            });
+            // 监听视频结束事件
+            videoPlayer.onended = function() {
+                // 缩小视频并移动到界面中间正上方
+                videoPlayer.style.width = "20%";
+                videoPlayer.style.height = "25%";
+                videoPlayer.style.top = "0"; // 取消顶部对齐
+                videoPlayer.style.left = "40%"; // 居中
+                setTimeout(() => {
+                    console.log("Showing labels and adding tree after 10 seconds.");
+                    showLabels();
+                }, 5000);
+                range(10).map((i) => {
+                    addTree(scene, uniforms, totalPoints, [20, 0, -20 * i]);
+                    addTree(scene, uniforms, totalPoints, [-20, 0, -20 * i]);
+                });
+            };
+            init();
+        }, undefined, function(error) {
+            console.error("音频加载失败:", error);
+            document.getElementById("overlay").innerHTML = '<div class="text-loading">加载失败，请重试。</div>';
+        });
+    }
 
 			function uploadAudio(event) {
 				document.getElementById("overlay").innerHTML =
