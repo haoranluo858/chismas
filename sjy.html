@@ -258,13 +258,19 @@
 				composer.render();
 				requestAnimationFrame(animate);
 			}
-
-			function loadAudio(i) {
+    function loadAudio(i) {
         document.getElementById("overlay").innerHTML =
             '<div class="text-loading">别着急，正在打开...</div>';
         const file = musicList[i].url;
         const loader = new THREE.AudioLoader();
+        
+        // 设置超时处理
+        const timeout = setTimeout(() => {
+            document.getElementById("overlay").innerHTML = '<div class="text-loading">加载超时，请重试。</div>';
+        }, 10000); // 10秒超时
+
         loader.load(file, function(buffer) {
+            clearTimeout(timeout); // 清除超时处理
             audio.setBuffer(buffer);
             audio.setLoop(true);
             audio.play();
@@ -296,10 +302,12 @@
             };
             init();
         }, undefined, function(error) {
+            clearTimeout(timeout); // 清除超时处理
             console.error("音频加载失败:", error);
             document.getElementById("overlay").innerHTML = '<div class="text-loading">加载失败，请重试。</div>';
         });
     }
+</script>
 
 			function uploadAudio(event) {
 				document.getElementById("overlay").innerHTML =
